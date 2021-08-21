@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/
+dev/
+prod/
+material/
+.vscode/
+*.code-workspace
+sync_to_thp.*

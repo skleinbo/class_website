@@ -1,0 +1,139 @@
+{% extends "layout.njk" %}
+{% set slug = 'home' %}
+{% set buildNav = false %}
+{% set useHighlight = true %}
+
+{%block head%}
+<meta title="LECTURE"/>
+<title>TITLE</title>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+
+{%endblock%}
+
+{% block ceiling %}
+<ol class="breadcrumb ceiling">
+    <li><a href="http://www.uni-koeln.de/">UzK</a></li>
+    <li><a href="http://www.ibp.uni-koeln.de/">IBP</a></li>
+    <li class="active">Exercise class example</li>
+</ol>
+{% endblock ceiling %}
+
+{% block content %}
+
+<header class="col-xs-12">
+<h1><span style="font-size:0.8em">Exercise class</span><br/>LECTURE 
+    <span style="font-size:0.7em;display:block;text-align:left;padding-right:15px">WHAT TERM IS IT?!</span></h1>
+<dl class="dl-horizontal">
+    <dt>Lecture</dt><dd><a href="">LECTURER; LINK TO LECTURE PAGE</a></dd>
+    <dt>Exercises</dt><dd>YOU (<a href="mailto:">mail</a>)</dd>
+</dl>
+</header>
+
+<section class="col-md-6 col-xs-12">
+<a class="" data-toggle="collapse" href="#newsSection"><h2 class="sectionHeading">News</h2></a>
+<div class="sectionContent" id="newsSection">
+<ul class="arrowList">
+   <li><strong>This happened recently.</strong>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam doloribus tenetur earum praesentium nobis, eos perferendis provident eum id quia reiciendis alias, nisi itaque necessitatibus repudiandae nam magnam aliquid inventore.</p>
+   </li>
+   <li>Thanks to <code>MathJax</code> you can use $\LaTeX$ \[ f(x)=x^2+\int^x \sin(t)dt \]
+   </li>   
+   <li>You can highlight code through <code>Highlight.js</code><pre><code  class="julia">
+   # This is just foobar
+   function foobar(x; foo="bar")
+        println(x*foo)
+    end
+    </code></pre>
+   </li>
+   <li><p>Notice the two-column layout if the available screen width is large enough.
+   On mobile devices the layout reduces to one-column.
+   </p></li>
+   <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit assumenda similique aperiam deserunt delectus minima aut cumque quis tenetur sequi? Culpa, voluptate veniam eius ex nihil laborum recusandae necessitatibus veritatis?</li>
+   <li><p>At some point you are going to want to let the news section flow into the second column.</p></li>
+</ul>
+</div>
+</section>
+<!-- section -->
+<section class="col-md-6 col-xs-12">
+<a class="" data-toggle="collapse" href="#tutorialSection"><h2 class="sectionHeading">Tutorials</h2></a>
+<div class="sectionContent" id="tutorialSection">
+<dl class="dl-horizontal">
+    <dt>Hand-in</dt><dd>Exercises are to be thrown into the mailbox in front of the theory institute. You are encouraged to hand in your work in groups of up to three people.</dd>
+    <dt>Credits</dt><dd>At least 50% of the points from the exercises are required to be admitted to the written exam.</dd>
+    <dt>Classes</dt><dd><a href="">Assignment to the classes</a></dd>
+</dl>
+<table class="customTable">
+    <thead>
+        <tr>
+            <th>Time</th>
+            <th>Place</th>
+            <th>Tutor</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Monday 14<sup>00</sup>-15<sup>30</sup></td>
+            <td>The Reptile Room</td>
+            <td>Lemony Snicket</td>
+        </tr>
+        <tr>
+            <td>Tuesday 8<sup>15</sup>-9<sup>45</sup></td>
+            <td>Dungeons</td>
+            <td>Prof. Snape</td>
+        </tr>
+        <tr>
+            <td>Tuesday 10<sup>00</sup>-11<sup>30</sup></td>
+            <td>Froopy Land</td>
+            <td>King Tommy</td>
+        </tr>
+    </tbody>
+</table>
+<div class="sectionContent">
+</section>
+<!-- section -->
+<section class="col-xs-12">
+<h2 class="sectionHeading">Problem sets</h2>
+<div class="sectionContent">
+<table id="problemSets">
+    <!-- REPEAT THIS SNIPPET -->
+    <tr class="header">
+        <td class="week">Week #</td>
+        <td class="link"><a href="">Sheet #</a></td>
+        <td class="desc">WHAT'S THE SHEET ABOUT</td>
+    </tr>
+    <tr class="miscRow">
+        <td></td><td colspan="2" class="misc">HERE GOES EXTRA MATERIAL</a></td>
+    </tr>    
+    <!-- END SNIPPET -->
+    <!-- REPEAT THIS SNIPPET -->
+    <tr class="header">
+        <td class="week">Week #</td>
+        <td class="link"><a href="">Sheet #</a></td>
+        <td class="desc">WHAT'S THE SHEET ABOUT</td>
+    </tr>
+    <tr class="miscRow">
+        <td></td><td colspan="2" class="misc">HERE GOES EXTRA MATERIAL</a></td>
+    </tr>    
+    <!-- END SNIPPET -->
+</table>
+<div class="sectionContent">
+</section>
+<!-- section -->
+<section class="col-xs-12">
+<div class="separator"></div>
+<h3 class="sectionHeading">Literature</h3>
+<div class="sectionContent">
+<ul>
+    <li>
+        AUTHOR, <em>TITLE</em> (PUBLISHER)<br/>
+    </li>
+</ul>
+<div class="sectionContent">
+</section>
+{% endblock content %}
