@@ -51,9 +51,10 @@
         padding-bottom: initial;
     }
 
-    // .sectionHeading {
-        
-    // }
+    .sectionHeading {
+        break-before: left;
+        break-inside: avoid;   
+    }
     a {
         color: @links;
         text-decoration: underline;
@@ -150,6 +151,11 @@
             border-left: 3px solid @base;
         }
     }
+}
+
+.two-column-flow {
+    columns: 2;
+    break-inside: avoid;
 }
 
 #sidebar {
