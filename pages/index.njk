@@ -38,16 +38,17 @@ MathJax.Hub.Config({
 <div class="col-xs-12 two-column-flow">
 <section class="">
 <a class="" data-toggle="collapse" href="#newsSection"><h2 class="sectionHeading">News</h2></a>
-<div class="sectionContent" id="newsSection">
+<div class="sectionContent collapse in" id="newsSection">
 <ul class="arrowList">
    <li><strong>This happened recently.</strong>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam doloribus tenetur earum praesentium nobis, eos perferendis provident eum id quia reiciendis alias, nisi itaque necessitatibus repudiandae nam magnam aliquid inventore.</p>
    </li>
    <li>Thanks to <code>MathJax</code> you can use $\LaTeX$ \[ f(x)=x^2+\int^x \sin(t)dt \]
    </li>   
-   <li>You can highlight code through <code>Highlight.js</code><pre><code  class="julia">
-   # This is just foobar
-   function foobar(x; foo="bar")
+   <li>You can highlight code through <code>Highlight.js</code>
+    <pre><code class="julia">
+    # This is just foobar
+    function foobar(x; foo="bar")
         println(x*foo)
     end
     </code></pre>
@@ -63,7 +64,7 @@ MathJax.Hub.Config({
 <!-- section -->
 <section class="">
 <a class="" data-toggle="collapse" href="#tutorialSection"><h2 class="sectionHeading">Tutorials</h2></a>
-<div class="sectionContent" id="tutorialSection">
+<div class="sectionContent collapse in" id="tutorialSection">
 <dl class="dl-horizontal">
     <dt>Hand-in</dt><dd>Exercises are to be thrown into the mailbox in front of the theory institute. You are encouraged to hand in your work in groups of up to three people.</dd>
     <dt>Credits</dt><dd>At least 50% of the points from the exercises are required to be admitted to the written exam.</dd>
@@ -111,7 +112,7 @@ MathJax.Hub.Config({
     </tr>
     <tr class="miscRow">
         <td></td><td colspan="2" class="misc">HERE GOES EXTRA MATERIAL</a></td>
-    </tr>    
+    </tr>
     <!-- END SNIPPET -->
     <!-- REPEAT THIS SNIPPET -->
     <tr class="header">
@@ -121,7 +122,7 @@ MathJax.Hub.Config({
     </tr>
     <tr class="miscRow">
         <td></td><td colspan="2" class="misc">HERE GOES EXTRA MATERIAL</a></td>
-    </tr>    
+    </tr>
     <!-- END SNIPPET -->
 </table>
 <div class="sectionContent">
