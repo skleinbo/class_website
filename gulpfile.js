@@ -1,9 +1,9 @@
 var gulp = require('gulp');
 var plumber = require("gulp-plumber");
-var gu = require('gulp-util');
 var gl = require('gulp-less');
 var del = require('del');
 var { join } = require('path')
+var log = require('fancy-log');
 
 var nunjucksRender = require('gulp-nunjucks-render');
 const { series, parallel } = require('gulp');
@@ -12,10 +12,12 @@ var browserSync    = require('browser-sync').create();
 const DEVROOT  = ''
 const DISTROOT = '~/skleinbo'
 
-const ENV = gu.env.env || 'dev';
-const isdev = ENV=='dev'
-const output = !isdev ? 'dist' : 'dev';
+const BUILD_ENV = process.env.BUILD_ENV || 'dev';
+const isdev = BUILD_ENV=='dev'
+const output = isdev ? 'dev' : 'dist';
 const root = isdev ? DEVROOT : DISTROOT;
+
+log(`Building '${output}'.`)
 
 // Copy these folders over
 // to dev / dist
@@ -98,13 +100,24 @@ function watch(done){
 };
 
 
-exports.less = less;
-exports.default = series(
-    less,
-    javascript,
-    assets,
-    render,
-    parallel(serve, watch)
-);
 exports.assets = assets
 exports.cleanall = clean_all;
+exports.less = less;
+exports.render = render;
+exports.serve = serve;
+if(isdev) {
+    exports.default = series(
+        less,
+        javascript,
+        assets,
+        render,
+        parallel(serve, watch)
+    );
+} else {
+    exports.default = series(
+        less,
+        javascript,
+        assets,
+        render
+    );
+}

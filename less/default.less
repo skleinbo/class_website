@@ -19,8 +19,12 @@
 @sidebar-width: 200px;
 
 // Load serif/sans font
-@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+// Do NOT import Google fonts from CDN due to DSGVO !!
+// @import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');
+// @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+// Self-hosted fonts
+@import url('../fonts/Lato/font.css');
+@import url('../fonts/Merriweather/font.css');
 
 .navbar-default {
     background: @base;
@@ -51,9 +55,10 @@
         padding-bottom: initial;
     }
 
-    // .sectionHeading {
-        
-    // }
+    .sectionHeading {
+        break-before: left;
+        break-inside: avoid;   
+    }
     a {
         color: @links;
         text-decoration: underline;
@@ -152,6 +157,15 @@
     }
 }
 
+.two-column-flow {
+    @media (min-width: @screen-md-min){
+        column-count: 2;
+        column-gap: 4em;
+        column-rule: 1px solid lightgray;
+        break-inside: avoid;
+    }
+}
+
 #sidebar {
     border: 0px;
     border-radius: 0px;
@@ -239,6 +253,10 @@
     text-align: center;
     border-radius: 50% 0% 0% 50%;
     visibility: hidden;
+}
+
+pre {
+    margin-top: 10px;
 }
 
 
