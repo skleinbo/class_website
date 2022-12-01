@@ -10,7 +10,7 @@ const { series, parallel } = require('gulp');
 var browserSync    = require('browser-sync').create();
 
 const DEVROOT  = ''
-const DISTROOT = '~/skleinbo'
+const DISTROOT = '/class_website'
 
 const BUILD_ENV = process.env.BUILD_ENV || 'dev';
 const isdev = BUILD_ENV=='dev'
