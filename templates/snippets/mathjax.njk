@@ -1,5 +1,11 @@
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
-  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+    }
 });
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js" integrity="sha512-GQ3aaCTQty4Iq5QrAtKpzomUSNz3sJpWOUxxJoZW4PYAKsckw49SMVaAykMh4SopX87eVGrxf9yOat27echN1Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
