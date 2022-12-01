@@ -49,7 +49,7 @@ __OR__
     gulp
     ```
 
-    This will build all assets and place them into `dev`. As long as the `gulp` process is running, changes made to the source files trigger a new build and are reflected immediately in the live view.
+    This builds all assets and places them into `dev`. As long as the `gulp` process is running, changes made to the source files trigger a new build and are reflected immediately in the live view.
 
 ## Customization
 
@@ -77,3 +77,8 @@ The contents of `css/`, `fonts/`, `img/`, `js/`, `material/` is  copied over to 
 
 If you do not require `MathJax` or `highlight.js` support, open `pages/index.njk` and at the top set the respective variables
 `useMathJax` or `useHighlight` to false.
+
+## TODO
+
+* Upgrade to Bootstrap@5 and Sass.
+* Upgrade to MathJax@3
