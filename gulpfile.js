@@ -9,8 +9,8 @@ var nunjucksRender = require('gulp-nunjucks-render');
 const { series, parallel } = require('gulp');
 var browserSync    = require('browser-sync').create();
 
-const DEVROOT  = ''
-const DISTROOT = '/class_website'
+const DEVROOT  = process.env.ROOT || ''
+const DISTROOT = process.env.ROOT || '/class_website'
 
 const BUILD_ENV = process.env.BUILD_ENV || 'dev';
 const isdev = BUILD_ENV=='dev'
