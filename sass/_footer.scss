@@ -1,20 +1,21 @@
+@use "colors" as *;
+
 .footer {
     position: absolute;
     width: 100%;
     bottom: 0;
-    background: @base-light;
-    background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
-    
-    //.box-shadow(0px 0px 3px darken(@base, 0%));
-    border-top: 1px solid @base;
-    border-bottom: 1px solid @base;
+    background: $base-light;
+
+    border-top: 1px solid $base;
+    border-bottom: 1px solid $base;
 
     height: 200px;
     max-height: 200px;
     padding: 20px 0 0 0;
-    
+
     font-family: 'Lato', sans-serif;
-    color: @base;
+    color: $base;
+
     i {
         font-size: 3em;
     }
@@ -24,17 +25,16 @@
         height: 75%;
         padding: 0% 10% 0% 10%;
     }
+
     #lower {
         position: relative;
         bottom: 0;
         width: 100%;
         height: 25%;
-        background-color: @base;
-        // z-index: auto;
-//        margin-top: 5%;
+        background-color: $base;
         padding: 0% 0% 0% 10%;
         box-sizing: border-box;
-        color: @secondary;
+        color: $secondary;
         font-size: 0.9em;
         text-align: right;
         vertical-align: middle;

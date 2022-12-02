@@ -10,9 +10,9 @@
 
 {% block ceiling %}
 <ol class="breadcrumb ceiling">
-    <li><a href="http://www.uni-koeln.de/">UzK</a></li>
-    <li><a href="http://www.ibp.uni-koeln.de/">IBP</a></li>
-    <li class="active">Exercise class example</li>
+    <li class="breadcrumb-item"><a href="http://www.uni-koeln.de/">UzK</a></li>
+    <li class="breadcrumb-item"><a href="http://www.ibp.uni-koeln.de/">IBP</a></li>
+    <li class="breadcrumb-item active">Exercise class example</li>
 </ol>
 {% endblock ceiling %}
 
@@ -21,16 +21,16 @@
 <header class="col-xs-12">
 <h1><span style="font-size:0.8em">Exercise class</span><br/>LECTURE 
     <span style="font-size:0.7em;display:block;text-align:left;padding-right:15px">WHAT TERM IS IT?!</span></h1>
-<dl class="dl-horizontal">
-    <dt>Lecture</dt><dd><a href="">LECTURER; LINK TO LECTURE PAGE</a></dd>
-    <dt>Exercises</dt><dd>YOU (<a href="mailto:">mail</a>)</dd>
+<dl class="row">
+    <dt class="col-1 text-end">Lecture</dt><dd class="col-11"><a href="">LECTURER; LINK TO LECTURE PAGE</a></dd>
+    <dt class="col-1 text-end">Exercises</dt><dd class="col-11">YOU (<a href="mailto:">mail</a>)</dd>
 </dl>
 </header>
 
 <div class="col-xs-12 two-column-flow">
 <section class="">
-<a class="" data-toggle="collapse" href="#newsSection"><h2 class="sectionHeading">News</h2></a>
-<div class="sectionContent collapse in" id="newsSection">
+<a class="" data-bs-toggle="collapse" data-bs-target="#newsSection"><h2 class="sectionHeading">News</h2></a>
+<div class="sectionContent collapse show" id="newsSection">
 <ul class="arrowList">
    <li><strong>This happened recently.</strong>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam doloribus tenetur earum praesentium nobis, eos perferendis provident eum id quia reiciendis alias, nisi itaque necessitatibus repudiandae nam magnam aliquid inventore.</p>
@@ -55,8 +55,8 @@
 </section>
 <!-- section -->
 <section class="">
-<a class="" data-toggle="collapse" href="#tutorialSection"><h2 class="sectionHeading">Tutorials</h2></a>
-<div class="sectionContent collapse in" id="tutorialSection">
+<a class="" data-bs-toggle="collapse" data-bs-target="#tutorialSection"><h2 class="sectionHeading">Tutorials</h2></a>
+<div class="sectionContent collapse show" id="tutorialSection">
 <dl class="dl-horizontal">
     <dt>Hand-in</dt><dd>Exercises are to be thrown into the mailbox in front of the theory institute. You are encouraged to hand in your work in groups of up to three people.</dd>
     <dt>Credits</dt><dd>At least 50% of the points from the exercises are required to be admitted to the written exam.</dd>
