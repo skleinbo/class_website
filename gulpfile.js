@@ -1,9 +1,10 @@
 var gulp = require('gulp');
 var plumber = require("gulp-plumber");
-var gl = require('gulp-less');
+const sass = require('gulp-sass')(require('sass'));
 var del = require('del');
 var { join } = require('path')
 var log = require('fancy-log');
+var prefixer = require('gulp-autoprefixer');
 
 var nunjucksRender = require('gulp-nunjucks-render');
 const { series, parallel } = require('gulp');
@@ -44,11 +45,11 @@ function render(done) {
     .pipe(gulp.dest(output))
 }
 
-function less(done) {
-    let stream = gulp.src('less/default.less')
-    .pipe(plumber(handleError))
-    // less
-    .pipe(gl())
+function compilecss(done) {
+    let stream = gulp.src(['sass/**/*.scss', '!sass/**/_*.scss'])
+    // .pipe(plumber(handleError))
+    .pipe(sass().on('error', sass.logError))
+    // .pipe(prefixer())
     .pipe(gulp.dest(join(output,'css')))
 
     if(isdev){
@@ -94,7 +95,7 @@ function watch(done){
         }
         ])
     );
-    gulp.watch('less/**/*.less', less);
+    gulp.watch('sass/**/*.scss', compilecss);
     gulp.watch('js/**/*.js', javascript);
     gulp.watch(assetFolders, assets);
 };
@@ -102,20 +103,20 @@ function watch(done){
 
 exports.assets = assets
 exports.cleanall = clean_all;
-exports.less = less;
+exports.compilecss = compilecss;
 exports.render = render;
 exports.serve = serve;
 if(isdev) {
     exports.default = series(
-        less,
+        parallel(compilecss,
         javascript,
         assets,
-        render,
+        render),
         parallel(serve, watch)
     );
 } else {
     exports.default = series(
-        less,
+        compilecss,
         javascript,
         assets,
         render

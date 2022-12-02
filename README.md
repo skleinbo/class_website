@@ -6,10 +6,9 @@ __Dependencies__:
 
 The following dependencies are linked to
 
-* Bootstrap: 3.4.1
+* Bootstrap: 5.2.3
 * highlight.js: 11.2.0
-* MathJax: 2.7.9
-* jQuery: 1.12.4
+* MathJax: ^3
 
 Furthermore, the template uses the Google fonts _Lato_ and _Merriweather_ which are however provided in this repository.
 
@@ -55,23 +54,23 @@ __OR__
 
 ### Colors
 
-`less/default.less` defines a range of color variables:
+`sass/colors.scss` defines a range of color variables:
 
-```css
-@base: darken(#2d2d34,10%);
-@base-light: lighten(@base,10%);
-@secondary: lighten(#D0E1F9,80%);
-@links: @base-light;
-@links-light: lighten(@links,75%);
-@text: #1E1F26;
-@text-light: @secondary;
+```scss
+$base: darken(#2d2d34,10%);
+$base-light: lighten($base,10%);
+$secondary: lighten(#D0E1F9,80%);
+$links: $base-light;
+$links-light: lighten($links,75%);
+$text: #1E1F26;
+$text-light: $secondary;
 ```
 
-Try changing `@base,@secondary` and `@text` for a start.
+Try changing `$base,$secondary` and `$text` for a start.
 
 ### Assets
 
-The contents of `css/`, `fonts/`, `img/`, `js/`, `material/` is  copied over to the build directory. Store your assets in them.
+The contents of `css/`, `fonts/`, `img/`, `js/`, `material/` is copied over to the build directory. Store your assets in them.
 
 ### Plugins
 
@@ -80,5 +79,5 @@ If you do not require `MathJax` or `highlight.js` support, open `pages/index.njk
 
 ## TODO
 
-* Upgrade to Bootstrap@5 and Sass.
-* Upgrade to MathJax@3
+* [x] Upgrade to Bootstrap@5 and Sass.
+* [x] Upgrade to MathJax@3

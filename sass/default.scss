@@ -1,0 +1,245 @@
+@use "colors" as *;
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+// Load serif/sans font
+// Do NOT import Google fonts from CDN due to DSGVO !!
+// @import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');
+// @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+// Self-hosted fonts
+@import url('../fonts/Lato/font.css');
+@import url('../fonts/Merriweather/font.css');
+
+.navbar-default {
+    background: $base;
+}
+
+#wrapper {
+    min-height: 100%;
+    position: relative;
+}
+
+#content {
+    padding-bottom: 250px;
+}
+
+.mainContent {
+    padding: 0;
+
+    @include media-breakpoint-up(sm) {
+        padding-top: 50px;
+    }
+
+    color: $text;
+
+    h2 {
+        font-weight: 600;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        color: $base;
+        font-family: 'Lato', sans-serif;
+        // font-weight: normal;
+        padding-bottom: 0.5em;
+    }
+
+    h4 {
+        padding-bottom: initial;
+    }
+
+    .sectionHeading {
+        break-before: left;
+        break-inside: avoid;
+    }
+
+    a {
+        color: $links;
+        text-decoration: underline;
+        border-bottom: 0px dotted $links;
+        font-size: 1.0em;
+    }
+
+    address {
+        padding-left: 5%;
+        border-left: 2px solid $base;
+        font-family: 'Lato', sans-serif;
+
+        table {
+            line-height: 1.6em;
+
+            i {
+                color: $base;
+                padding-right: 10px;
+            }
+        }
+    }
+
+    .separator {
+        height: 2em;
+        width: 33%;
+        box-sizing: border-box;
+        margin-top: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        border-top: 2px solid $base;
+    }
+
+    dl>dt,
+    dd {
+        line-height: inherit;
+    }
+
+    .customTable {
+        width: 100%;
+
+        th {
+            line-height: 1.6em;
+            border-bottom: 1px solid $base;
+            background: $base-light;
+            font-weight: bold;
+            // padding-right: 1em;
+            // padding-left: 1em;
+            padding: 1em;
+            color: $text-light;
+        }
+
+        td {
+            padding: 0.5em;
+            // padding-bottom: 1.5em;
+            padding-left: 1.0em;
+        }
+
+        tr {
+            border-left: 3px solid $base;
+        }
+
+        tr:nth-child(even) td {
+            background: $base-light;
+            color: $text-light;
+        }
+    }
+
+    .arrowList {
+        list-style: "\25BA" none outside;
+        margin-top: 8px;
+
+        >li {
+            padding-left: 8px;
+            padding-bottom: 8px;
+        }
+    }
+
+    #problemSets {
+        width: 100%;
+
+        .header {
+            line-height: 1.6em;
+            background: $base-light;
+            border-top: 0px solid $base;
+            color: $text-light;
+
+            a {
+                color: $links-light;
+            }
+
+            .desc {
+                font-weight: bold;
+            }
+
+            .week {
+                font-weight: bold;
+                padding-right: 1em;
+                padding-left: 1em;
+                padding: 1em;
+            }
+        }
+
+        .misc {
+            padding: 1em;
+            padding-bottom: 1.5em;
+            padding-top: 0.5em;
+        }
+
+        tr {
+            border-left: 3px solid $base;
+        }
+    }
+}
+
+.two-column-flow {
+    @include media-breakpoint-up(md) {
+        column-count: 2;
+        column-gap: 4em;
+        column-rule: 1px solid lightgray;
+        break-inside: avoid;
+    }
+}
+
+#ceiling {
+    background-color: $base-light;
+    height: 36px;
+    max-height: 36px;
+    width: 100%;
+    border-bottom: 1px $base solid;
+
+    @include media-breakpoint-down(sm) {
+        visibility: hidden;
+    }
+
+    $breadcrumb-padding-x: 10px;
+    $breadcrumb-padding-y: 10px;
+    @import "../node_modules/bootstrap/scss/breadcrumb";
+
+    .breadcrumb {
+        color: $text-light;
+        background-color: inherit;
+
+        a {
+            color: darken($links-light, 0%);
+        }
+
+        li,
+        .active {
+            color: $links-light;
+        }
+    }
+
+}
+
+pre {
+    margin-top: 10px;
+}
+
+
+body {
+    //    position: relative;
+    background-color: $secondary;
+    font-size: 11pt;
+    font-family: 'Merriweather', serif;
+
+    .container-fluid {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    a {
+        color: $links;
+    }
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#page-content-wrapper {
+    width: 100%;
+}
+
+@import "footer";

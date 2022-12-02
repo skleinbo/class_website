@@ -1,0 +1,15 @@
+// Change these values to customize the color scheme
+$base: darken(#2d2d34,10%);
+$base-light: lighten($base,10%);
+$secondary: lighten(#D0E1F9,80%);
+$links: $base-light;//#68829E;
+$links-light: lighten($links,75%);
+$text: #1E1F26;
+$text-light: $secondary;
+
+// Alternative color scheme
+// $base-light: #598234;
+// $base: #AEBD38;
+// $secondary: #FFF;
+// $links: #68829E;
+// $text: #505160;
