@@ -1,6 +1,6 @@
 # Description
 
-Single page website based on [Bootstrap](https://getbootstrap.com/). Integrates [MathJax](https://www.mathjax.org/) for displaying LaTeX-style math, and [highlight.js](https://highlightjs.org/) for beautiful code display.
+Single page website based on [Bootstrap](https://getbootstrap.com/). Integrates [MathJax](https://www.mathjax.org/) for displaying LaTeX-style math, and [highlight.js](https://highlightjs.org/) for beautiful code display. `Nunjucks` turns templates into HTML.
 
 __Dependencies__:
 
@@ -51,6 +51,10 @@ __OR__
     This builds all assets and places them into `dev`. As long as the `gulp` process is running, changes made to the source files trigger a new build and are reflected immediately in the live view.
 
 ## Customization
+
+### Content
+
+The sole page `index.html` is built from a [Nunjucks](https://mozilla.github.io/nunjucks/) template in `pages/index.njk`. Modify this.
 
 ### Colors
 
